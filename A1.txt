@@ -1,0 +1,91 @@
+--1.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color, ListPrice FROM Production.Product
+
+--2.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color, ListPrice FROM Production.Product
+WHERE ListPrice != 0
+
+--3.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color, ListPrice FROM Production.Product
+WHERE Color IS NULL
+
+--4.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color, ListPrice FROM Production.Product
+WHERE NOT Color IS NULL
+
+--5.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color, ListPrice FROM Production.Product
+WHERE NOT Color IS NULL AND ListPrice > 0
+
+--6.
+
+USE AdventureWorks2019
+SELECT CONCAT(Name, ',', Color) FROM Production.Product
+WHERE NOT Color IS NULL
+
+--7.
+
+USE AdventureWorks2019
+SELECT Name, Color FROM Production.Product
+WHERE Color IN ('Black', 'Silver') AND (Name like 'Chainring%' OR Name like '%Crankarm')
+
+--8.
+
+USE AdventureWorks2019
+SELECT ProductID, Name FROM Production.Product
+WHERE ProductID BETWEEN 400 AND 500
+
+--9.
+
+USE AdventureWorks2019
+SELECT ProductID, Name, Color FROM Production.Product
+WHERE Color IN ('Black', 'Blue')
+
+--10.
+
+USE AdventureWorks2019
+SELECT Name FROM Production.Product
+WHERE Name like 'S%'
+
+--11.
+
+USE AdventureWorks2019
+SELECT Name, ListPrice FROM Production.Product
+WHERE Name like 'S%'
+ORDER BY Name, ListPrice
+
+--12.
+
+USE AdventureWorks2019
+SELECT Name, ListPrice FROM Production.Product
+WHERE Name LIKE 'S%' OR Name LIKE 'A%' 
+ORDER BY Name
+
+--13.
+
+USE AdventureWorks2019
+SELECT Name FROM Production.Product
+WHERE Name LIKE 'spo[^k]%'
+ORDER BY Name
+
+--14.
+
+USE AdventureWorks2019
+SELECT DISTINCT Color FROM Production.Product
+ORDER BY COLOR
+
+--15.
+
+USE AdventureWorks2019
+SELECT DISTINCT ProductSubcategoryID, Color FROM Production.Product
+WHERE ProductSubcategoryID IS NOT NULL AND COLOR IS NOT NULL
